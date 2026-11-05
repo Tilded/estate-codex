@@ -58,7 +58,7 @@
       </div>
 
       <section class="hero">
-        <img class="hero-image" src="assets/hero-estate.svg" alt="Pixel-block reference composition: a monumental but weathered neoclassical estate beneath a gathering storm, with a dark text-safe zone on the left.">
+        <img class="hero-image" src="assets/house-standard-hero.svg" alt="320 by 224 pixel-art composition: the left third is a text-safe dark field; the right two-thirds show a weathered neoclassical manor, storm dithering at pediment height, ancient oaks, and a broken chain at the garden edge.">
         <div class="hero-copy">
               <h1>The Estate<br><em>Codex</em></h1>
           <p class="hero-deck">An old order still inhabited. Still maintained. Already contested.</p>
@@ -116,7 +116,7 @@
 
       <article class="register register-lead">
         <div class="register-art">
-          <img src="assets/hero-estate.svg" alt="Estate of the Crown placeholder: manor, formal grounds, storm, and ancient oak.">
+          <img src="assets/house-standard-hero.svg" alt="Estate of the Crown placeholder: manor, formal grounds, storm, and ancient oak.">
           <span class="art-stamp">B · LEADING REGISTER</span>
         </div>
         <div class="register-text">
@@ -157,7 +157,7 @@
       </article>
     </section>
 
-    <!-- 320x224 replaces the earlier incorrect 320x180 artwork viewport; it matches a Genesis 40x28 tile field. -->
+    <!-- 320x224 is the locked Genesis artwork viewport because it matches a 40x28 tile field. -->
     <section class="codex-section" id="technical">
       <div class="section-heading">
         <span class="chapter">III · THE TECHNICAL COVENANT</span>
@@ -175,14 +175,14 @@
         <div class="spec-row"><span>Working visible budget</span><strong>61 colors for the ordinary transparency convention</strong></div>
         <div class="spec-row"><span>Tile unit</span><strong>8 × 8 pixels</strong></div>
         <div class="spec-row"><span>Pixel depth</span><strong>4bpp · one selected 16-entry palette per tile</strong></div>
-        <div class="spec-row"><span>Codex artwork viewport</span><strong>320 × 180 · hardware-aligned 40×28 tile composition</strong></div>
+        <div class="spec-row"><span>Internal resolution</span><strong>320 × 224 pixels · Genesis 40 × 28 tile field</strong></div>
         <div class="spec-row"><span>Nearest-neighbor</span><strong>Required for raster enlargement</strong></div>
         <div class="spec-row"><span>Rendering bans</span><strong>No anti-aliasing, subpixel rendering, blur, gradients, or painterly texture</strong></div>
       </div>
 
       <div class="technical-note">
         <span class="note-mark">!</span>
-        <div><strong>Hardware correction.</strong><p>The working canvas is 320×224, matching the standard 40×28 tile field. The earlier 320×224 web viewport is retired. Preserve the full 320×224 frame for Genesis-style assets; do not crop it to a web-only aspect ratio when the brief calls for hardware-faithful composition.</p></div>
+        <div><strong>Hardware correction.</strong><p>The working canvas is 320×224, matching the standard 40×28 tile field. Preserve the full 320×224 frame for Genesis-style assets; do not crop it to a web-only aspect ratio when the brief calls for hardware-faithful composition.</p></div>
       </div>
       <a class="document-link" href="https://github.com/Tilded/estate-codex/blob/main/docs/genesis-specification.md" target="_blank" rel="noreferrer">Read the full Genesis specification <span>↗</span></a>
     </section>
