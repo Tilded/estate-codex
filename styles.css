@@ -155,7 +155,9 @@ main { margin-left: 264px; max-width: 1540px; padding: 0 54px; }
 .hero {
   position: relative;
   margin-top: 18px;
-  min-height: 360px;
+  width: min(100%, 960px);
+  aspect-ratio: 320 / 224;
+  min-height: 0;
   overflow: hidden;
   border: 4px solid var(--gold);
   background: var(--black);
@@ -166,14 +168,14 @@ main { margin-left: 264px; max-width: 1540px; padding: 0 54px; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   image-rendering: pixelated;
 }
 .hero-copy {
   position: relative;
   z-index: 1;
-  width: min(43%, 430px);
-  padding: 45px 0 38px 34px;
+  width: 35%;
+  padding: 27px 10px 22px 22px;
 }
 .hero h1 { margin: 0; color: var(--bone); font: 400 32px/1.12 var(--display-font); }
 .hero h1 em { color: var(--gilt); font-style: normal; }
@@ -351,7 +353,7 @@ blockquote {
 .prompt-library em { color: var(--gilt); font: normal 8px var(--pixel-font); text-align: right; }
 
 .colophon { margin-top: 75px; padding: 26px 0 22px; border-top: 4px double var(--gold); }
-.colophon-title { color: var(--gilt); font: 20px var(--display-font); }
+.colophon-title { color: var(--gilt); font: 26px var(--display-font); }
 .colophon p { margin: 7px 0 24px; color: var(--limestone); font-style: italic; }
 .colophon-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--stone); font: 8px/1.7 var(--pixel-font); }
 .colophon-bottom a { color: var(--gilt); text-decoration: none; }
@@ -483,10 +485,12 @@ blockquote {
   body { font-size: 17px; }
   main { padding: 0 15px; }
   .masthead-line { font-size: 8px; }
-  .hero { min-height: 330px; }
-  .hero-copy { width: 76%; padding: 30px 8px 25px 16px; }
+  .hero { width: 100%; aspect-ratio: auto; min-height: 0; }
+  .hero-image { position: relative; display: block; width: 100%; height: auto; object-fit: contain; }
+  .hero-copy { width: 100%; padding: 16px; background: var(--black); }
   .hero h1 { font-size: 30px; }
-  .hero-deck { max-width: 245px; font-size: 18px; }
+  .hero-deck { max-width: 100%; font-size: 18px; }
+  .hero-caption { position: relative; right: auto; bottom: auto; padding: 9px 12px; text-align: left; background: var(--black); }
   .opening-note p { font-size: 18px; }
   .codex-section { padding-top: 52px; }
   .chapter { font-size: 8px; }
