@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:wght@400;500;600;700&family=Press+Start+2P&display=swap');
-
 :root {
   --black: #000000;
   --ink: #242424;
@@ -96,17 +94,17 @@ main { margin-left: 252px; max-width: 1500px; padding: 0 54px; }
   color: var(--gilt); font: 7px/1.5 var(--pixel-font); letter-spacing: .02em;
 }
 .hero {
-  position: relative; margin-top: 18px; min-height: 390px;
+  position: relative; margin-top: 18px; aspect-ratio: 16 / 9; max-height: 560px;
   overflow: hidden; border: 4px solid var(--gold); background: var(--black);
   box-shadow: 6px 6px 0 #000;
 }
 .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
-.hero-copy { position: relative; z-index: 1; width: min(44%, 390px); padding: 48px 0 38px 34px; }
+.hero-copy { position: relative; z-index: 1; width: min(40%, 400px); padding: 48px 0 38px 34px; }
 .micro-label, .register-kicker, .type-role, .chapter, .folio, .hero-caption, .handoff-top, .opening-note::before {
   font: 8px/1.7 var(--pixel-font); letter-spacing: .02em;
 }
 .micro-label { color: var(--gilt); margin: 0 0 16px; }
-.hero h1 { margin: 0; color: var(--bone); font: 400 clamp(35px, 5vw, 64px)/1.12 var(--display-font); letter-spacing: -.035em; }
+.hero h1 { margin: 0; color: var(--bone); font: 400 clamp(35px, 5vw, 58px)/1.12 var(--display-font); letter-spacing: -.035em; }
 .hero h1 em { color: var(--gilt); font-style: normal; }
 .hero-deck { max-width: 300px; margin: 17px 0 23px; color: var(--parchment); font-size: 22px; line-height: 1.15; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
@@ -270,10 +268,14 @@ blockquote {
   body { font-size: 18px; }
   main { padding: 0 15px; }
   .masthead-line { font-size: 6px; }
-  .hero { min-height: 350px; }
-  .hero-copy { width: 74%; padding: 39px 12px 35px 20px; }
-  .hero h1 { font-size: 37px; }
-  .hero-deck { max-width: 220px; font-size: 19px; }
+  .hero { min-height: 0; max-height: none; }
+  .hero-copy { width: 42%; padding: 10px 4px 8px 8px; }
+  .hero h1 { font-size: 20px; }
+  .hero-deck { max-width: 130px; margin: 8px 0 10px; font-size: 13px; }
+  .micro-label { margin-bottom: 7px; font-size: 5px; }
+  .hero-actions { gap: 6px; }
+  .seal-link { padding: 5px 5px; font-size: 5px; }
+  .text-link { display: none; }
   .hero-caption { max-width: 65%; font-size: 5px; }
   .opening-note p { font-size: 18px; }
   .codex-section { padding-top: 52px; }
