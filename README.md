@@ -2,22 +2,23 @@
 
 > Permanent visual & narrative constitution for the Estate Under Siege aesthetic. Style rules, reference doctrine, adaptation principles, and AI handoff library. Not an app—just the house standard.
 
-**The Estate Codex is a reusable creative reference, not a game, a product landing page, or an image-generation service.** It exists to give future human and AI collaborators one stable source of truth for visual tone, narrative handling, pixel-art constraints, and adaptation across unrelated projects.
+The Estate Codex is a reusable creative reference. It is not a game, a product landing page, or an image-generation service. It gives future human and AI collaborators one stable source of truth for visual tone, narrative handling, pixel-art constraints, and adaptation across unrelated projects.
 
-## Begin here
+## Open the reference
 
-- **[House Standard](House-Standard.html)** — the canonical visual and narrative constitution.
-- **[Character Bible](Character-Bible.html)** — the first character register, lore treatments, and working chronology.
-- **[Visual Constitution](docs/visual-constitution.md)** — the identity and non-negotiable art direction.
-- **[Genesis Specification](docs/genesis-specification.md)** — hardware facts, logical canvas rules, tile construction, and export distinctions.
-- **[Color Ramp](docs/color-ramp.md)** — four 16-entry RGB333 palette banks with HEX, RGB333, and CRAM values.
-- **[Tile Atlas](docs/tile-atlas.md)** — the 96-tile material vocabulary.
-- **[Adaptation Doctrine](docs/adaptation-doctrine.md)** — how the house style travels into unrelated games and projects.
-- **[Canon & Source Hierarchy](docs/canon-and-source-hierarchy.md)** — how to preserve the truth of supplied lore.
-- **[AI Handoff Library](prompts/master-handoff.md)** — the reusable instruction to give a future agent.\n- **[Publishing the website](docs/publishing.md)** — enable GitHub Pages or preview locally.
-- **[Prompt: Character Creation](prompts/character-creation.md)**
-- **[Prompt: Asset Briefing](prompts/asset-briefing.md)**
-- **[Prompt: Game Interface](prompts/game-interface.md)**
+- [House Standard](House-Standard.html) — canonical visual and narrative constitution.
+- [Character Bible](Character-Bible.html) — the first character register, lore treatments, and working chronology.
+- [Visual Constitution](docs/visual-constitution.md) — identity and non-negotiable art direction.
+- [Genesis Specification](docs/genesis-specification.md) — 320×224 hardware rules, tile construction, and export standards.
+- [Color Ramp](docs/color-ramp.md) — four 16-entry RGB333 palette banks with HEX, RGB333, and CRAM values.
+- [Tile Atlas](docs/tile-atlas.md) — the 96-tile material vocabulary.
+- [Adaptation Doctrine](docs/adaptation-doctrine.md) — how the house style travels into unrelated games and projects.
+- [Canon & Source Hierarchy](docs/canon-and-source-hierarchy.md) — how to preserve the truth of supplied lore.
+- [Master AI Handoff](prompts/master-handoff.md) — reusable instructions for a future agent.
+- [Character Creation Prompt](prompts/character-creation.md)
+- [Asset Briefing Prompt](prompts/asset-briefing.md)
+- [Game Interface Prompt](prompts/game-interface.md)
+- [Publishing Instructions](docs/publishing.md)
 
 ## The governing principle
 
@@ -37,15 +38,17 @@ The estate must look worth preserving. Its vulnerability is what gives the image
 
 ```text
 /
-├── index.html                 # redirects to House-Standard.html
-├── House-Standard.html
-├── Character-Bible.html
-├── styles.css
-├── script.js
+├── index.html                 # forwards the Pages root to House-Standard.html
+├── House-Standard.html        # canonical house reference
+├── Character-Bible.html       # character register and working chronology
+├── styles.css                 # shared hand-editable stylesheet
+├── script.js                  # mobile index, copy controls, timeline tabs
 ├── assets/
-│   ├── hero-estate.svg
-│   ├── last-abbey.svg
-│   └── broken-measure.svg
+│   ├── house-standard-hero.svg
+│   ├── character-*-portrait.svg
+│   ├── lore-*.svg
+│   ├── last-abbey-224.svg
+│   └── broken-measure-224.svg
 ├── docs/
 │   ├── visual-constitution.md
 │   ├── genesis-specification.md
@@ -62,16 +65,16 @@ The estate must look worth preserving. Its vulnerability is what gives the image
 
 ## Status and limitations
 
-This repository contains the house standard and clearly labelled visual placeholders. Placeholder art demonstrates composition and palette intent; it is not a finished game asset and must not be treated as a source of character canon. There is no image-generation integration, backend, account system, game runtime, or dependency on any individual game repository.
+The repository contains the house standard and clearly labelled visual placeholders. Placeholder art demonstrates composition and palette intent; it is not finished game art and must not be treated as character canon. The three initial character portraits intentionally avoid inventing physical features that have not been supplied.
 
-The website is intended to be read, referenced, and handed to other tools. The Markdown files are the durable source documents; the website is their navigable visual companion.
+There is no image-generation integration, backend, account system, game runtime, or dependency on any individual game repository.
+
+The website is intended to be read, referenced, and handed to other tools. The Markdown files are durable source documents; the two HTML pages are their navigable visual companion.
 
 ## Technical note
 
-The locked internal artwork resolution is 320×224 pixels, a 40×28 field of 8×8 tiles. Do not crop it to the retired 320×180 web viewport. The approved four-bank RGB333 palette is recorded in docs/color-ramp.md.
-
-The color ramp uses RGB333 values on the Genesis 3-bit-per-channel lattice. CRAM words are shown as four hexadecimal digits using the hardware bit layout `0BBB0GGG0RRR0`.
+The locked internal resolution is **320×224 pixels**, a 40×28 field of 8×8 tiles. The project uses 9-bit RGB333 color, four 16-entry sub-palettes, 4bpp tile data, nearest-neighbor enlargement, and the approved palette recorded in [docs/color-ramp.md](docs/color-ramp.md).
 
 ## Use
 
-When a future project begins, give the AI the Codex website and the relevant Markdown source documents, then provide that project's lore bible, physical descriptions, references, and practical requirements. Use the handoff prompt to establish the order of authority and request the specific deliverable.
+When a future project begins, give the AI the Codex website and relevant Markdown source documents, then provide that project's lore bible, physical descriptions, references, and practical requirements. Use the handoff prompt to establish the order of authority and request the specific deliverable.
