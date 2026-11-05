@@ -1,27 +1,16 @@
 :root {
-  --black:      #242424;
-  --ink:        #242424;
-  --night:      #24246D;
-  --navy:       #24246D;
-  --storm:      #49496D;
-  --limestone:  #B6B692;
-  --stone:      #DBB692;
-  --parchment:  #FFDBB6;
-  --bone:       #FFFFDB;
-  --gold:       #DBB624;
-  --gilt:       #FFDB49;
-  --bronze:     #B66D24;
-  --oxblood:    #6D2449;
-  --tyrian:     #6D2449;
-  --evergreen:  #244924;
-  --moss:       #6D9249;
-  --iron:       #6D6D92;
-  --amber:      #FFB624;
-  --violet:     #49246D;
-  --line:       #6D6D92;
-  --body-font:    "EB Garamond", Georgia, serif;
+  --black: #242424; --ink: #242424;
+  --night: #24246D; --navy: #24246D; --storm: #49496D;
+  --limestone: #B6B692; --stone: #DBB692;
+  --parchment: #FFDBB6; --bone: #FFFFDB;
+  --gold: #DBB624; --gilt: #FFDB49; --bronze: #B66D24;
+  --oxblood: #6D2449; --tyrian: #6D2449;
+  --evergreen: #244924; --moss: #6D9249;
+  --iron: #6D6D92; --amber: #FFB624; --violet: #49246D;
+  --line: #6D6D92;
+  --body-font: "EB Garamond", Georgia, serif;
   --display-font: "Cinzel Decorative", Georgia, serif;
-  --pixel-font:   "Press Start 2P", monospace;
+  --pixel-font: "Press Start 2P", monospace;
   color-scheme: dark;
 }
 
@@ -60,7 +49,7 @@ button { font: inherit; }
   padding: 25px 20px 18px;
   display: flex;
   flex-direction: column;
-  background: var(--black);
+  background: #242424;
   border-right: 4px solid var(--gold);
 }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--bone); text-decoration: none; }
