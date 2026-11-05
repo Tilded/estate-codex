@@ -12,3 +12,16 @@ Tone: in-world, concrete, heraldic. No SaaS filler ("empower," "unlock,"
 "journey," "elevate"). No fake metrics, no glow, no glassmorphism.
 
 Task: [whatever you're doing]
+
+
+
+Reference: https://tilded.github.io/estate-codex/House-Standard.html
+Match style to attached reference image.
+
+Palette (locked): #242424 #24246D #6D6D92 #49246D #B6B692 #DBB692
+#FFDBB6 #FFFFDB #DBB624 #6D2449 #B66D24 #244924 #6D9249 #FFB624
+Spec: Genesis 16-bit, 320x224, 9-bit RGB, 61 onscreen, 8x8 tiles,
+no anti-aliasing, no gradients, no rounded corners.
+Tone: in-world heraldic, no SaaS filler.
+
+Task: [new character / new scene / new section]
