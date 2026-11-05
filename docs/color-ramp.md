@@ -1,126 +1,137 @@
-# Color Ramp
-**Four palette banks · 16 entries each · RGB333 · CRAM**
+# Locked Color Ramp
+**Four palette banks · 16 entries each · RGB333 · Genesis CRAM**
 
-This is the canonical Codex palette revision 1.0. It supersedes the earlier conversational draft: values below are snapped to the Genesis 3-bit-per-channel lattice and CRAM is written as a four-digit word.
+This revision follows the corrected Estate Codex palette supplied in the master brief. No alternate hex values are part of the locked house palette.
 
-## Encoding
+## Hardware encoding
 
-The RGB333 column is written `R# G# B#`. The HEX column expands each channel to the 8-bit reference levels in `genesis-specification.md`. CRAM is encoded as `0BBB0GGG0RRR0`:
+- 9-bit RGB: 3 bits per channel, 512 possible colors.
+- Four 16-entry sub-palettes: 64 CRAM slots.
+- Working onscreen limit: 61 colors, following the brief's transparency convention.
+- Each pixel uses a 4-bit palette index; each tile selects one 16-entry sub-palette.
+- CRAM word layout: `0BBB0GGG0RRR0`.
+- Channel expansion used below: RGB3 levels `0, 36, 73, 109, 146, 182, 219, 255`.
 
-```text
-word = (B << 9) | (G << 5) | (R << 1)
-```
+For a HEX color, the `RGB333` column lists the three channel values as decimal digits from 0 through 7. The CRAM value is `(B << 9) | (G << 5) | (R << 1)`, shown as four hexadecimal digits.
 
-All three are equivalent representations of the same color.
+## Locked color families
 
-## Palette usage
-
-| Bank | Name | Assignment |
-|---|---|---|
-| P0 | Background | Night sky, depth, dark environmental silhouettes, backdrop |
-| P1 | Architecture | Limestone, marble, stone, iron, bronze, gilt |
-| P2 | UI & Heraldry | Oxblood controls, parchment plates, text, heraldic detail |
-| P3 | Accent & Symbol | Moss, oak, cold iron, mystic violet, restricted candle amber |
-
-In this art convention, P0 index `00` is the black backdrop. Index `00` in P1–P3 is reserved as transparent when used for sprites and overlays. The target engine must handle plane/backdrop transparency according to its own VDP rules. This gives a practical maximum of 61 distinct visible palette slots in a composition that uses the three non-backdrop zero entries as transparency.
+| Name | HEX | RGB333 | CRAM |
+|---|---|---|---|
+| Charcoal | `#242424` | `111` | `0222` |
+| Imperial midnight | `#24246D` | `113` | `0622` |
+| Storm | `#49496D` | `223` | `0644` |
+| Limestone | `#B6B692` | `554` | `08AA` |
+| Warm stone | `#DBB692` | `654` | `08AC` |
+| Parchment | `#FFDBB6` | `765` | `0ACE` |
+| Bone | `#FFFFDB` | `776` | `0CEE` |
+| Antique gold | `#DBB624` | `651` | `02AC` |
+| Gilt | `#FFDB49` | `762` | `04CE` |
+| Burnished bronze | `#B66D24` | `531` | `026A` |
+| Oxblood / Tyrian | `#6D2449` | `312` | `0426` |
+| Deep evergreen | `#244924` | `121` | `0242` |
+| Moss | `#6D9249` | `342` | `0486` |
+| Cold iron | `#6D6D92` | `334` | `0866` |
+| Candle amber | `#FFB624` | `751` | `02AE` |
+| Mystic violet | `#49246D` | `213` | `0624` |
 
 ## P0 — Background
 
-Use this bank for night, storm, distant silhouettes, deep foliage, and environmental recesses. It should carry the broadest dark value range.
+Night field, storm, distant silhouettes, deep recesses, and atmospheric mass.
 
 | Index | Name | HEX | RGB333 | CRAM |
 |---|---|---|---|---|
-| 00 | Backdrop black | `#000000` | `R0 G0 B0` | `0000` |
-| 01 | Ink navy | `#000024` | `R0 G0 B1` | `0200` |
-| 02 | Night navy | `#000049` | `R0 G0 B2` | `0400` |
-| 03 | Imperial midnight | `#00006D` | `R0 G0 B3` | `0600` |
-| 04 | Storm blue | `#002492` | `R0 G1 B4` | `0820` |
-| 05 | Blue-black slate | `#242449` | `R1 G1 B2` | `0422` |
-| 06 | Charcoal | `#242424` | `R1 G1 B1` | `0222` |
-| 07 | Iron charcoal | `#494949` | `R2 G2 B2` | `0444` |
-| 08 | Distant violet | `#24006D` | `R1 G0 B3` | `0602` |
-| 09 | Mystic violet | `#490092` | `R2 G0 B4` | `0804` |
-| 0A | Tyrian shadow | `#490049` | `R2 G0 B2` | `0404` |
-| 0B | Oxblood shadow | `#490000` | `R2 G0 B0` | `0004` |
-| 0C | Deep evergreen | `#004900` | `R0 G2 B0` | `0040` |
-| 0D | Evergreen shadow | `#002400` | `R0 G1 B0` | `0020` |
-| 0E | Distant iron | `#49496D` | `R2 G2 B3` | `0644` |
-| 0F | Storm cloud | `#6D6D92` | `R3 G3 B4` | `0866` |
+| 00 | Charcoal | `#242424` | `111` | `0222` |
+| 01 | Imperial midnight | `#24246D` | `113` | `0622` |
+| 02 | Storm | `#49496D` | `223` | `0644` |
+| 03 | Cold iron | `#6D6D92` | `334` | `0866` |
+| 04 | Mystic violet | `#49246D` | `213` | `0624` |
+| 05 | Oxblood / Tyrian | `#6D2449` | `312` | `0426` |
+| 06 | Deep evergreen | `#244924` | `121` | `0242` |
+| 07 | Moss | `#6D9249` | `342` | `0486` |
+| 08 | Burnished bronze | `#B66D24` | `531` | `026A` |
+| 09 | Antique gold | `#DBB624` | `651` | `02AC` |
+| 0A | Gilt | `#FFDB49` | `762` | `04CE` |
+| 0B | Warm stone | `#DBB692` | `654` | `08AC` |
+| 0C | Limestone | `#B6B692` | `554` | `08AA` |
+| 0D | Parchment | `#FFDBB6` | `765` | `0ACE` |
+| 0E | Bone | `#FFFFDB` | `776` | `0CEE` |
+| 0F | Candle amber | `#FFB624` | `751` | `02AE` |
 
 ## P1 — Architecture
 
-Stone and marble must remain distinct from parchment. Gold is used on architectural edges and details, never as a general fill.
+Stone, marble, iron, bronze, and small gilt edges. Preserve limestone and warm stone as distinct materials.
 
 | Index | Name | HEX | RGB333 | CRAM |
 |---|---|---|---|---|
-| 00 | Transparent | `#000000` | `R0 G0 B0` | `0000` |
-| 01 | Deep recess | `#242424` | `R1 G1 B1` | `0222` |
-| 02 | Cold iron shadow | `#494949` | `R2 G2 B2` | `0444` |
-| 03 | Weathered iron | `#6D6D92` | `R3 G3 B4` | `0866` |
-| 04 | Stone shadow | `#6D6D49` | `R3 G3 B2` | `0466` |
-| 05 | Limestone shadow | `#92926D` | `R4 G4 B3` | `0688` |
-| 06 | Warm limestone | `#B6B692` | `R5 G5 B4` | `08AA` |
-| 07 | Sunlit limestone | `#DBDBB6` | `R6 G6 B5` | `0ACC` |
-| 08 | Bone white | `#FFFFDB` | `R7 G7 B6` | `0CEE` |
-| 09 | Parchment highlight | `#FFFFFF` | `R7 G7 B7` | `0EEE` |
-| 0A | Bronze shadow | `#492400` | `R2 G1 B0` | `0024` |
-| 0B | Burnished bronze | `#6D4900` | `R3 G2 B0` | `0046` |
-| 0C | Antique gold | `#926D00` | `R4 G3 B0` | `0068` |
-| 0D | Gilt midtone | `#B69224` | `R5 G4 B1` | `028A` |
-| 0E | Gilt highlight | `#DBB649` | `R6 G5 B2` | `04AC` |
-| 0F | Warm stone | `#DBB692` | `R6 G5 B4` | `08AC` |
+| 00 | Charcoal | `#242424` | `111` | `0222` |
+| 01 | Cold iron | `#6D6D92` | `334` | `0866` |
+| 02 | Limestone | `#B6B692` | `554` | `08AA` |
+| 03 | Warm stone | `#DBB692` | `654` | `08AC` |
+| 04 | Parchment | `#FFDBB6` | `765` | `0ACE` |
+| 05 | Bone | `#FFFFDB` | `776` | `0CEE` |
+| 06 | Burnished bronze | `#B66D24` | `531` | `026A` |
+| 07 | Antique gold | `#DBB624` | `651` | `02AC` |
+| 08 | Gilt | `#FFDB49` | `762` | `04CE` |
+| 09 | Storm | `#49496D` | `223` | `0644` |
+| 0A | Imperial midnight | `#24246D` | `113` | `0622` |
+| 0B | Oxblood / Tyrian | `#6D2449` | `312` | `0426` |
+| 0C | Deep evergreen | `#244924` | `121` | `0242` |
+| 0D | Moss | `#6D9249` | `342` | `0486` |
+| 0E | Mystic violet | `#49246D` | `213` | `0624` |
+| 0F | Candle amber | `#FFB624` | `751` | `02AE` |
 
 ## P2 — UI & Heraldry
 
-Use for oxblood controls, aged paper, headings, text, and heraldic trim. Keep interactive states restrained.
+Oxblood controls, parchment plates, readable text, heraldic frames, and restrained interaction states.
 
 | Index | Name | HEX | RGB333 | CRAM |
 |---|---|---|---|---|
-| 00 | Transparent | `#000000` | `R0 G0 B0` | `0000` |
-| 01 | UI ink | `#242424` | `R1 G1 B1` | `0222` |
-| 02 | Oxblood black | `#240000` | `R1 G0 B0` | `0002` |
-| 03 | Oxblood | `#490000` | `R2 G0 B0` | `0004` |
-| 04 | Tyrian purple | `#6D0024` | `R3 G0 B1` | `0206` |
-| 05 | Tyrian light | `#920049` | `R4 G0 B2` | `0408` |
-| 06 | Parchment shade | `#929249` | `R4 G4 B2` | `0488` |
-| 07 | Aged parchment | `#B6B66D` | `R5 G5 B3` | `06AA` |
-| 08 | Parchment ivory | `#DBDBB6` | `R6 G6 B5` | `0ACC` |
-| 09 | Bone text | `#FFFFDB` | `R7 G7 B6` | `0CEE` |
-| 0A | Antique gold shadow | `#6D4900` | `R3 G2 B0` | `0046` |
-| 0B | Antique gold | `#926D00` | `R4 G3 B0` | `0068` |
-| 0C | Pale gilt | `#DBB649` | `R6 G5 B2` | `04AC` |
-| 0D | Evergreen | `#004900` | `R0 G2 B0` | `0040` |
-| 0E | Moss hover | `#496D00` | `R2 G3 B0` | `0064` |
-| 0F | Oxblood highlight | `#B62424` | `R5 G1 B1` | `022A` |
+| 00 | Charcoal | `#242424` | `111` | `0222` |
+| 01 | Imperial midnight | `#24246D` | `113` | `0622` |
+| 02 | Oxblood / Tyrian | `#6D2449` | `312` | `0426` |
+| 03 | Mystic violet | `#49246D` | `213` | `0624` |
+| 04 | Burnished bronze | `#B66D24` | `531` | `026A` |
+| 05 | Antique gold | `#DBB624` | `651` | `02AC` |
+| 06 | Gilt | `#FFDB49` | `762` | `04CE` |
+| 07 | Parchment | `#FFDBB6` | `765` | `0ACE` |
+| 08 | Limestone | `#B6B692` | `554` | `08AA` |
+| 09 | Warm stone | `#DBB692` | `654` | `08AC` |
+| 0A | Bone | `#FFFFDB` | `776` | `0CEE` |
+| 0B | Cold iron | `#6D6D92` | `334` | `0866` |
+| 0C | Moss | `#6D9249` | `342` | `0486` |
+| 0D | Deep evergreen | `#244924` | `121` | `0242` |
+| 0E | Storm | `#49496D` | `223` | `0644` |
+| 0F | Candle amber | `#FFB624` | `751` | `02AE` |
 
 ## P3 — Accent & Symbol
 
-This bank carries moss, oak, symbolic iron, mystic violet, and the only designated candle amber.
+Moss, evergreen, oak, symbolic iron, mystic violet, and the single designated candle amber.
 
 | Index | Name | HEX | RGB333 | CRAM |
 |---|---|---|---|---|
-| 00 | Transparent | `#000000` | `R0 G0 B0` | `0000` |
-| 01 | Charcoal ink | `#242424` | `R1 G1 B1` | `0222` |
-| 02 | Blue-iron shadow | `#242449` | `R1 G1 B2` | `0422` |
-| 03 | Cold iron | `#49496D` | `R2 G2 B3` | `0644` |
-| 04 | Iron highlight | `#6D6D92` | `R3 G3 B4` | `0866` |
-| 05 | Violet shadow | `#24006D` | `R1 G0 B3` | `0602` |
-| 06 | Mystic violet | `#490092` | `R2 G0 B4` | `0804` |
-| 07 | Violet haze | `#6D6DB6` | `R3 G3 B5` | `0A66` |
-| 08 | Evergreen | `#004900` | `R0 G2 B0` | `0040` |
-| 09 | Root moss | `#246D00` | `R1 G3 B0` | `0062` |
-| 0A | Moss green | `#499200` | `R2 G4 B0` | `0084` |
-| 0B | Oak bark | `#492400` | `R2 G1 B0` | `0024` |
-| 0C | Burnished bronze | `#6D4900` | `R3 G2 B0` | `0046` |
-| 0D | Antique gold | `#926D00` | `R4 G3 B0` | `0068` |
-| 0E | Candle amber | `#FF9224` | `R7 G4 B1` | `028E` |
-| 0F | Parchment glint | `#DBDBB6` | `R6 G6 B5` | `0ACC` |
+| 00 | Charcoal | `#242424` | `111` | `0222` |
+| 01 | Cold iron | `#6D6D92` | `334` | `0866` |
+| 02 | Moss | `#6D9249` | `342` | `0486` |
+| 03 | Deep evergreen | `#244924` | `121` | `0242` |
+| 04 | Mystic violet | `#49246D` | `213` | `0624` |
+| 05 | Candle amber | `#FFB624` | `751` | `02AE` |
+| 06 | Antique gold | `#DBB624` | `651` | `02AC` |
+| 07 | Gilt | `#FFDB49` | `762` | `04CE` |
+| 08 | Burnished bronze | `#B66D24` | `531` | `026A` |
+| 09 | Limestone | `#B6B692` | `554` | `08AA` |
+| 0A | Storm | `#49496D` | `223` | `0644` |
+| 0B | Imperial midnight | `#24246D` | `113` | `0622` |
+| 0C | Warm stone | `#DBB692` | `654` | `08AC` |
+| 0D | Parchment | `#FFDBB6` | `765` | `0ACE` |
+| 0E | Oxblood / Tyrian | `#6D2449` | `312` | `0426` |
+| 0F | Bone | `#FFFFDB` | `776` | `0CEE` |
 
 ## Usage discipline
 
-- Do not add a fifth palette bank to an asset and still call it a four-bank Genesis palette.
-- Reuse identical colors across banks when an asset spans materials.
-- Keep amber rare. It marks a candle, a single inhabited window, or a similarly meaningful point.
-- Gold belongs on edges, capitals, heraldry, and small ornaments. Too much gold makes the estate celebratory.
-- The palette is a constrained material system, not a command to use every entry in every asset.
-- For assets that must ship in a real Genesis game, validate palette assignment and transparency in the target engine or art pipeline.
+- Use only these sixteen locked HEX values in the CSS and style references.
+- A tile selects one sub-palette; do not treat the four banks as one unrestricted 64-color palette.
+- Reuse colors between banks where useful, but do not introduce substitute shades.
+- Amber is reserved for candlelight or a similarly rare inhabited point.
+- Gold belongs on borders, capitals, heraldry, and limited emphasis. It must not make the estate celebratory.
+- Keep every asset readable at its stated native dimensions. Pixel texture is deliberate structure, not random noise.
