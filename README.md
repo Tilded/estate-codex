@@ -13,7 +13,7 @@
 - **[Tile Atlas](docs/tile-atlas.md)** — the 96-tile material vocabulary.
 - **[Adaptation Doctrine](docs/adaptation-doctrine.md)** — how the house style travels into unrelated games and projects.
 - **[Canon & Source Hierarchy](docs/canon-and-source-hierarchy.md)** — how to preserve the truth of supplied lore.
-- **[AI Handoff Library](prompts/master-handoff.md)** — the reusable instruction to give a future agent.
+- **[AI Handoff Library](prompts/master-handoff.md)** — the reusable instruction to give a future agent.\n- **[Publishing the website](docs/publishing.md)** — enable GitHub Pages or preview locally.
 - **[Prompt: Character Creation](prompts/character-creation.md)**
 - **[Prompt: Asset Briefing](prompts/asset-briefing.md)**
 - **[Prompt: Game Interface](prompts/game-interface.md)**
