@@ -57,8 +57,8 @@ When the requested asset is explicitly in the Genesis register:
 - Use hard-edged shading, crisp pixel clusters, and deliberate chunky dithering.
 - Use nearest-neighbor scaling.
 - No anti-aliasing, subpixel rendering, blur, smooth gradients, painterly texture, or high-resolution art disguised by a pixel filter.
-- The Codex artwork viewport is 320×180. This is not a native Genesis display mode. State whether an asset is a web composition or intended for a selected console framebuffer.
-- If whole 8×8 rows are required for the 320×180 web artwork, stage at 320×184 and crop the bottom four pixels. Do not misstate this as a native mode.
+- The Codex artwork viewport is 320×224. This is the locked Genesis internal resolution. State whether an asset is a web composition or intended for a selected console framebuffer.
+- If whole 8×8 rows are required for the 320×224 web artwork, stage at 320×224 and crop the bottom four pixels. Do not misstate this as a native mode.
 - Keep the silhouette readable at native size and at the requested preview size.
 
 Do not apply the Genesis constraints to an asset if the task explicitly asks for a different medium. In that case, carry over the Codex's material and tonal sensibility while documenting the technical exception.
