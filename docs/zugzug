@@ -1,0 +1,14 @@
+Reference for aesthetics, tone, and stylistic consistency:
+https://tilded.github.io/estate-codex/House-Standard.html
+
+Locked palette (do not drift): #242424 #24246D #6D6D92 #49246D #B6B692
+#DBB692 #FFDBB6 #FFFFDB #DBB624 #6D2449 #B66D24 #244924 #6D9249 #FFB624
+
+Hardware spec: Sega Genesis 16-bit, 320x224, 9-bit RGB, 61 colors onscreen
+(4x16 sub-palettes + transparency), 8x8 tiles, no anti-aliasing, no
+gradients, no rounded corners, 12px text floor, Press Start 2P only at 8px.
+
+Tone: in-world, concrete, heraldic. No SaaS filler ("empower," "unlock,"
+"journey," "elevate"). No fake metrics, no glow, no glassmorphism.
+
+Task: [whatever you're doing]
