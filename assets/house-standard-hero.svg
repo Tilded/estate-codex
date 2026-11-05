@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="224" viewBox="0 0 320 224" shape-rendering="crispEdges" role="img" aria-labelledby="title desc">
+  <!-- PLACEHOLDER ART: replace this SVG with generated 320x224 Genesis-style hero art. Preserve the left-third text-safe zone, storm at pediment height, estate on the right, and broken chain at the garden edge. -->
+  <title id="title">The Estate Under Siege, House Standard hero placeholder</title>
+  <desc id="desc">A monumental neoclassical manor fills the right two-thirds beneath a gathering storm. The left third is a dark text-safe field. A neglected wing, ancient oaks, and a broken chain at the garden edge signal an estate under pressure.</desc>
+  <rect width="320" height="224" fill="#24246D"/>
+  <rect x="0" y="0" width="108" height="224" fill="#242424"/>
+  <rect x="108" y="0" width="12" height="224" fill="#24246D"/>
+  <!-- Storm blocks and checker dithering rise to the pediment level. -->
+  <rect x="121" y="12" width="38" height="16" fill="#49496D"/>
+  <rect x="158" y="0" width="44" height="22" fill="#49246D"/>
+  <rect x="194" y="15" width="49" height="16" fill="#49496D"/>
+  <rect x="240" y="0" width="54" height="23" fill="#24246D"/>
+  <rect x="283" y="20" width="37" height="17" fill="#49246D"/>
+  <path d="M121 35h8v8h-8z M137 35h8v8h-8z M153 35h8v8h-8z M169 35h8v8h-8z M185 35h8v8h-8z M201 35h8v8h-8z M217 35h8v8h-8z M233 35h8v8h-8z M249 35h8v8h-8z M265 35h8v8h-8z M281 35h8v8h-8z M297 35h8v8h-8z" fill="#6D6D92"/>
+  <path d="M129 51h8v8h-8z M145 51h8v8h-8z M161 51h8v8h-8z M177 51h8v8h-8z M193 51h8v8h-8z M209 51h8v8h-8z M225 51h8v8h-8z M241 51h8v8h-8z M257 51h8v8h-8z M273 51h8v8h-8z M289 51h8v8h-8z" fill="#242424"/>
+  <rect x="124" y="61" width="196" height="25" fill="#49496D"/>
+  <rect x="121" y="83" width="199" height="22" fill="#24246D"/>
+  <!-- distant chapel and village -->
+  <rect x="115" y="113" width="11" height="26" fill="#DBB692"/>
+  <path d="M113 113l7-12 8 12z" fill="#6D6D92"/>
+  <rect x="118" y="94" width="3" height="8" fill="#FFDBB6"/>
+  <rect x="130" y="126" width="12" height="13" fill="#6D6D92"/>
+  <rect x="145" y="121" width="15" height="18" fill="#49496D"/>
+  <!-- neglected west wing -->
+  <rect x="152" y="102" width="72" height="56" fill="#DBB692"/>
+  <rect x="147" y="96" width="81" height="8" fill="#6D6D92"/>
+  <rect x="158" y="91" width="59" height="5" fill="#B66D24"/>
+  <rect x="164" y="87" width="42" height="4" fill="#6D6D92"/>
+  <rect x="151" y="95" width="15" height="4" fill="#242424"/>
+  <rect x="201" y="90" width="12" height="5" fill="#242424"/>
+  <rect x="160" y="111" width="12" height="19" fill="#242424"/>
+  <rect x="183" y="111" width="12" height="19" fill="#242424"/>
+  <rect x="205" y="111" width="12" height="19" fill="#242424"/>
+  <rect x="164" y="114" width="4" height="13" fill="#24246D"/>
+  <rect x="187" y="114" width="4" height="13" fill="#24246D"/>
+  <rect x="209" y="114" width="4" height="13" fill="#24246D"/>
+  <rect x="157" y="136" width="63" height="5" fill="#6D6D92"/>
+  <rect x="164" y="147" width="4" height="10" fill="#244924"/>
+  <rect x="170" y="141" width="4" height="16" fill="#6D9249"/>
+  <!-- central pavilion -->
+  <rect x="219" y="88" width="66" height="70" fill="#B6B692"/>
+  <rect x="214" y="82" width="76" height="7" fill="#DBB692"/>
+  <rect x="223" y="76" width="58" height="6" fill="#B66D24"/>
+  <path d="M218 76h8v-5h8v-5h8v-5h25v5h8v5h8v5z" fill="#DBB624"/>
+  <rect x="235" y="67" width="31" height="5" fill="#FFDB49"/>
+  <rect x="226" y="91" width="5" height="53" fill="#DBB692"/>
+  <rect x="239" y="91" width="5" height="53" fill="#FFFFDB"/>
+  <rect x="253" y="91" width="5" height="53" fill="#FFFFDB"/>
+  <rect x="267" y="91" width="5" height="53" fill="#DBB692"/>
+  <rect x="234" y="98" width="3" height="42" fill="#6D6D92"/>
+  <rect x="248" y="98" width="3" height="42" fill="#6D6D92"/>
+  <rect x="262" y="98" width="3" height="42" fill="#6D6D92"/>
+  <rect x="244" y="123" width="15" height="35" fill="#242424"/>
+  <rect x="248" y="126" width="7" height="32" fill="#24246D"/>
+  <rect x="238" y="118" width="26" height="5" fill="#DBB624"/>
+  <rect x="220" y="151" width="65" height="7" fill="#6D6D92"/>
+  <!-- maintained east wing -->
+  <rect x="282" y="106" width="38" height="52" fill="#B6B692"/>
+  <rect x="278" y="100" width="42" height="7" fill="#DBB692"/>
+  <rect x="287" y="94" width="29" height="6" fill="#B66D24"/>
+  <rect x="289" y="115" width="9" height="19" fill="#242424"/>
+  <rect x="306" y="115" width="9" height="19" fill="#242424"/>
+  <rect x="292" y="118" width="3" height="13" fill="#24246D"/>
+  <rect x="309" y="118" width="3" height="13" fill="#24246D"/>
+  <rect x="283" y="148" width="37" height="10" fill="#6D6D92"/>
+  <!-- oak silhouette at far right -->
+  <rect x="304" y="42" width="10" height="72" fill="#B66D24"/>
+  <rect x="296" y="55" width="8" height="49" fill="#B66D24"/>
+  <rect x="313" y="67" width="7" height="48" fill="#B66D24"/>
+  <rect x="289" y="37" width="17" height="15" fill="#244924"/>
+  <rect x="302" y="27" width="16" height="19" fill="#244924"/>
+  <rect x="313" y="43" width="7" height="18" fill="#244924"/>
+  <rect x="282" y="51" width="15" height="15" fill="#6D9249"/>
+  <rect x="300" y="47" width="19" height="14" fill="#6D9249"/>
+  <!-- formal garden, broken balustrade and chain -->
+  <rect x="109" y="164" width="211" height="15" fill="#244924"/>
+  <rect x="122" y="177" width="198" height="10" fill="#242424"/>
+  <rect x="139" y="160" width="181" height="4" fill="#DBB692"/>
+  <rect x="144" y="164" width="4" height="13" fill="#DBB692"/>
+  <rect x="159" y="164" width="4" height="13" fill="#DBB692"/>
+  <rect x="174" y="164" width="4" height="13" fill="#DBB692"/>
+  <rect x="189" y="164" width="4" height="8" fill="#DBB692"/>
+  <rect x="197" y="170" width="8" height="5" fill="#6D6D92"/>
+  <rect x="219" y="164" width="4" height="13" fill="#DBB692"/>
+  <rect x="234" y="164" width="4" height="13" fill="#DBB692"/>
+  <rect x="249" y="164" width="4" height="13" fill="#DBB692"/>
+  <rect x="264" y="164" width="4" height="13" fill="#DBB692"/>
+  <!-- root flare breaks the old paving -->
+  <rect x="291" y="151" width="7" height="23" fill="#B66D24"/>
+  <rect x="278" y="173" width="17" height="5" fill="#B66D24"/>
+  <rect x="267" y="179" width="14" height="4" fill="#B66D24"/>
+  <rect x="297" y="178" width="19" height="5" fill="#B66D24"/>
+  <rect x="285" y="184" width="17" height="4" fill="#B66D24"/>
+  <!-- broken chain: small, discoverable, at the garden edge -->
+  <rect x="115" y="190" width="9" height="3" fill="#6D6D92"/>
+  <rect x="126" y="194" width="8" height="3" fill="#6D6D92"/>
+  <rect x="136" y="190" width="7" height="3" fill="#6D6D92"/>
+  <rect x="146" y="195" width="8" height="3" fill="#6D6D92"/>
+  <rect x="135" y="185" width="3" height="5" fill="#242424"/>
+  <rect x="154" y="192" width="3" height="4" fill="#242424"/>
+  <!-- one inhabited window -->
+  <rect x="251" y="102" width="4" height="7" fill="#FFB624"/>
+  <rect x="311" y="119" width="3" height="6" fill="#FFB624"/>
+  <rect x="0" y="216" width="320" height="8" fill="#242424"/>
+</svg>
