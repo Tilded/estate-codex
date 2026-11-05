@@ -50,8 +50,8 @@ The estate is neither a ruin nor a triumph. When depicting it, show visible pres
 ### 4. Genesis pixel-art specification
 
 When the task calls for Genesis-style asset art:
-- Use 320×180 as the Codex's 16:9 web-art viewport unless the asset has another specified dimension.
-- Treat 320×180 as a custom artwork size, not a native Genesis screen mode.
+- Use 320×224 as the Codex's 16:9 web-art viewport unless the asset has another specified dimension.
+- Treat 320×224 as a locked artwork size, not a native Genesis screen mode.
 - Build from 8×8 tile logic and the approved RGB333 color ramp.
 - Use four 16-entry palette banks, 4bpp pixel construction, and at most 16 selected colors per tile.
 - Use hard-edged shading and intentional chunky dithering.
