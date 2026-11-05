@@ -31,11 +31,11 @@
       const target = targetId ? document.getElementById(targetId) : null;
       if (!target) return;
 
-      const text = target.innerText;
       const original = button.dataset.originalLabel || button.innerText;
       button.dataset.originalLabel = original;
 
       try {
+        const text = target.innerText;
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(text);
         } else {
@@ -50,7 +50,6 @@
           helper.remove();
           if (!copied) throw new Error("Clipboard copy was not available.");
         }
-
         button.innerText = "COPIED";
         window.setTimeout(() => { button.innerText = original; }, 1500);
       } catch (error) {
@@ -60,7 +59,45 @@
     });
   });
 
-  const navLinks = Array.from(document.querySelectorAll(".primary-nav a"));
+  const tabLists = document.querySelectorAll('[role="tablist"]');
+  tabLists.forEach((tabList) => {
+    const tabs = Array.from(tabList.querySelectorAll('[data-timeline-tab]'));
+
+    const activate = (tab) => {
+      const targetId = tab.getAttribute("aria-controls");
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute("aria-selected", String(selected));
+        item.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+      document.querySelectorAll("[data-timeline-panel]").forEach((panel) => {
+        const active = panel.id === targetId;
+        panel.classList.toggle("active", active);
+        panel.hidden = !active;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.setAttribute("tabindex", tab.getAttribute("aria-selected") === "true" ? "0" : "-1");
+      tab.addEventListener("click", () => activate(tab));
+      tab.addEventListener("keydown", (event) => {
+        let next = index;
+        if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+        else if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === "Home") next = 0;
+        else if (event.key === "End") next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        tabs[next].focus();
+        activate(tabs[next]);
+      });
+    });
+
+    const initial = tabs.find((tab) => tab.getAttribute("aria-selected") === "true");
+    if (initial) activate(initial);
+  });
+
+  const navLinks = Array.from(document.querySelectorAll(".primary-nav a[href^='#']"));
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
