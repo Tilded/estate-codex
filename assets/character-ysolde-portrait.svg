@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" shape-rendering="crispEdges" role="img" aria-labelledby="t d">
+  <!-- PLACEHOLDER PORTRAIT: swap for generated character art after Ysolde's physical description is canonically specified. The figure is symbolic rather than a claim about her age or features. -->
+  <title id="t">Mother Ysolde portrait placeholder</title><desc id="d">Anonymous hooded silhouette framed by ancient oak roots and moss-green marks.</desc>
+  <rect width="128" height="128" fill="#242424"/>
+  <rect x="4" y="4" width="120" height="120" fill="none" stroke="#DBB624" stroke-width="4"/>
+  <path d="M106 4h18v19h-5V9h-13z" fill="#242424"/>
+  <rect x="8" y="108" width="12" height="9" fill="#6D9249"/>
+  <rect x="18" y="103" width="8" height="9" fill="#244924"/>
+  <path d="M30 48h8V34h8V23h30v11h8v14h7v24H30z" fill="#244924"/>
+  <path d="M38 51h8V40h7V33h20v9h8v32H38z" fill="#49246D"/>
+  <rect x="45" y="43" width="38" height="35" fill="#242424"/>
+  <rect x="31" y="76" width="66" height="34" fill="#244924"/>
+  <path d="M24 109h80v9H24z" fill="#6D9249"/>
+  <path d="M19 80h14v5H19z M13 85h9v5h-9z M94 76h10v5h-10z M102 82h9v5h-9z" fill="#B66D24"/>
+  <path d="M49 79v25h4v-14h5v-9z M75 79v25h-4V90h-5v-9z" fill="#6D9249"/>
+  <rect x="60" y="84" width="7" height="28" fill="#DBB692"/>
+  <path d="M108 28l-7 7 5 6-7 7" fill="none" stroke="#242424" stroke-width="2"/>
+  <rect x="108" y="113" width="8" height="5" fill="#6D9249"/>
+</svg>
