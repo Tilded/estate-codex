@@ -1,7 +1,7 @@
 # Genesis Specification
 **Corrected hardware standard · The Estate Codex**
 
-This specification replaces the former 320×180 web-art viewport. The Codex's locked internal resolution is **320×224**.
+The Codex's locked internal resolution is **320×224**.
 
 ## 1. Platform
 
@@ -16,7 +16,7 @@ This specification replaces the former 320×180 web-art viewport. The Codex's lo
 - Tile field: **40 columns × 28 rows**.
 - Upscaling: nearest-neighbor only.
 - CSS imagery: `image-rendering: pixelated`.
-- No 320×180 crop, 320×184 staging canvas, or 16:9 substitute in assets that claim to follow this hardware specification.
+- Preserve the full 320×224 frame; do not substitute a cropped web composition for a hardware-faithful asset.
 
 ## 3. Color
 
