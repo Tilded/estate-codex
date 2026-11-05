@@ -4,7 +4,7 @@ The repository contains a plain static website. There is no build step, backend,
 
 ## Enable GitHub Pages
 
-The static site files are in the repository root. To publish them:
+The static site files are in the repository root. `House-Standard.html` is the canonical reference page, `Character-Bible.html` is its companion, and `index.html` forwards the root URL to House Standard. To publish them:
 
 1. Open the repository's **Settings**.
 2. Open **Pages** under **Code and automation**.
@@ -28,8 +28,8 @@ The stylesheet requests Cinzel Decorative, EB Garamond, and Press Start 2P from 
 
 ## Local preview
 
-Open `index.html` directly in a modern browser. For a local HTTP preview, serve the repository root with any simple static file server. Keep the relative folder structure intact so `assets/`, `styles.css`, and `script.js` resolve correctly.
+Open `House-Standard.html` directly in a modern browser, or open `index.html` to follow the root redirect. For a local HTTP preview, serve the repository root with any simple static file server. Keep the relative folder structure intact so `assets/`, `styles.css`, and `script.js` resolve correctly.
 
 ## Updating the standard
 
-Edit the Markdown source documents first. Then update `index.html` if the navigable website needs to reflect the new rule. The Markdown documents are the durable source of truth; the site is their visual companion.
+Edit the Markdown source documents first. Then update `House-Standard.html` or `Character-Bible.html` as applicable. Keep `index.html` as the short root redirect. The Markdown documents are the durable source of truth; the site is their visual companion.
