@@ -459,7 +459,7 @@ blockquote {
 .swap-note { color: var(--stone); font-style: italic; font-size: 16px; }
 
 .prompt-prefix { margin-top: 23px; border: 2px solid var(--gold); }
-.prompt-prefix h3 { margin: 0; padding: 13px 15px; color: var(--gilt); background: var(--ink); border-bottom: 1px solid var(--line); font: 400 22px var(--display-font); }
+.prompt-prefix h3 { margin: 0; padding: 13px 15px; color: var(--gilt); background: var(--ink); border-bottom: 1px solid var(--line); font: 400 26px var(--display-font); }
 .prompt-prefix pre { margin: 0; padding: 16px; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--parchment); font: 16px/1.45 var(--body-font); background: var(--black); }
 .prompt-prefix .copy-button { border-top: 1px solid var(--line); }
 
