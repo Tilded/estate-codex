@@ -6,7 +6,8 @@
 
 ## Begin here
 
-- **[Open the Codex website](index.html)** — the browsable visual reference.
+- **[House Standard](House-Standard.html)** — the canonical visual and narrative constitution.
+- **[Character Bible](Character-Bible.html)** — the first character register, lore treatments, and working chronology.
 - **[Visual Constitution](docs/visual-constitution.md)** — the identity and non-negotiable art direction.
 - **[Genesis Specification](docs/genesis-specification.md)** — hardware facts, logical canvas rules, tile construction, and export distinctions.
 - **[Color Ramp](docs/color-ramp.md)** — four 16-entry RGB333 palette banks with HEX, RGB333, and CRAM values.
@@ -36,7 +37,9 @@ The estate must look worth preserving. Its vulnerability is what gives the image
 
 ```text
 /
-├── index.html
+├── index.html                 # redirects to House-Standard.html
+├── House-Standard.html
+├── Character-Bible.html
 ├── styles.css
 ├── script.js
 ├── assets/
@@ -65,7 +68,7 @@ The website is intended to be read, referenced, and handed to other tools. The M
 
 ## Technical note
 
-The 320×180 composition is a custom 16:9 artwork viewport, not a native Genesis display mode. Common Mega Drive modes include 320×224 (40×28 tiles) and, on PAL systems, 320×240 (40×30 tiles). Where an 8×8 tile-aligned staging canvas is useful, build at 320×184 and crop the bottom four rows for the 320×180 web asset. Do not describe that web crop as a native console mode.
+The locked internal artwork resolution is 320×224 pixels, a 40×28 field of 8×8 tiles. Do not crop it to the retired 320×180 web viewport. The approved four-bank RGB333 palette is recorded in docs/color-ramp.md.
 
 The color ramp uses RGB333 values on the Genesis 3-bit-per-channel lattice. CRAM words are shown as four hexadecimal digits using the hardware bit layout `0BBB0GGG0RRR0`.
 
