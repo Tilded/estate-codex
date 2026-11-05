@@ -1,111 +1,75 @@
 # Genesis Specification
-**Hardware facts, artwork conventions, and export rules**
+**Corrected hardware standard · The Estate Codex**
 
-This document separates actual Mega Drive / Genesis constraints from the Codex's custom website-art conventions. Do not describe a convenient web asset size as a native console mode.
+This specification replaces the former 320×180 web-art viewport. The Codex's locked internal resolution is **320×224**.
 
-## 1. Color hardware
+## 1. Platform
 
-The Mega Drive / Genesis VDP uses a 9-bit RGB color system: 3 bits each for red, green, and blue. The master color space therefore contains 512 possible RGB combinations.
+- Sega Genesis / Mega Drive, 16-bit generation.
+- Motorola 68000 CPU.
+- Visual target: authentic Genesis-era pixel art, not a modern illustration filtered to look pixelated.
 
-CRAM holds 64 color entries arranged as four palettes of 16 entries each. A tile or sprite selects a palette line; its four-bit pixel data selects one of the 16 entries in that line.
+## 2. Resolution and tile field
 
-The Codex uses a conservative 61-visible-color working budget for ordinary assets. This reflects the usual transparency convention in which color index 0 is not drawn for sprite pixels. The backdrop and plane behavior must be handled correctly by the target engine; do not treat all index-zero entries as ordinary opaque colors.
+- Locked internal resolution: **320×224 pixels**.
+- Tile unit: **8×8 pixels**.
+- Tile field: **40 columns × 28 rows**.
+- Upscaling: nearest-neighbor only.
+- CSS imagery: `image-rendering: pixelated`.
+- No 320×180 crop, 320×184 staging canvas, or 16:9 substitute in assets that claim to follow this hardware specification.
 
-### RGB333 channel levels
+## 3. Color
 
-For reference conversion to 8-bit RGB, use the evenly expanded 3-bit channel values:
+- VDP color: 9-bit RGB, 3 bits per channel.
+- Total possible RGB combinations: 512.
+- Palette organization: four 16-entry sub-palettes (64 CRAM slots).
+- Working onscreen maximum: 61 colors, following the supplied transparency convention.
+- Pixel depth: 4bpp, with each tile selecting one 16-entry sub-palette.
 
-| 3-bit value | 8-bit channel |
-|---:|---:|
-| 0 | 0 |
-| 1 | 36 |
-| 2 | 73 |
-| 3 | 109 |
-| 4 | 146 |
-| 5 | 182 |
-| 6 | 219 |
-| 7 | 255 |
+The exact locked HEX, RGB333, and CRAM values are in `color-ramp.md`. Do not invent additional palette shades.
 
-A color is represented as `R0 G0 B0` through `R7 G7 B7`. The exact displayed analog appearance can vary with console revision, video output, capture hardware, and display. The HEX values in the Codex are a practical digital reference expansion, not a claim that every console/display combination emits identical measured RGB values.
+## 4. Pixel construction
 
-## 2. CRAM word encoding
+Required:
+- Hard-edged shading.
+- Deliberate pixel-cluster placement.
+- Chunky checkerboard or woodcut-block dithering.
+- Strong readable silhouettes at native resolution.
+- 8×8 tile-based construction.
+- Nearest-neighbor upscaling.
+- `image-rendering: pixelated` on imagery.
 
-Genesis CRAM color words use the bit layout:
+Forbidden:
+- Anti-aliasing.
+- Subpixel rendering.
+- Gradients.
+- Blur.
+- Soft shadows.
+- Painterly texture.
+- High-resolution illustration with a pixel filter.
+- Excessive colors or colors outside the locked ramp.
 
-```text
-0BBB0GGG0RRR0
-```
+## 5. Asset dimensions
 
-The 3-bit blue channel occupies bits 11–9, green occupies bits 7–5, and red occupies bits 3–1. The least-significant bit of each nibble group is zero. The 16-bit register word is displayed as four hexadecimal digits, for example full white is `0EEE`.
+| Asset | Working dimension |
+|---|---:|
+| Internal scene / lore image | 320×224 |
+| Hero art master | 320×224 |
+| Character portrait | 128×128 |
+| Character sprite | 64×96 |
+| Tile | 8×8 |
 
-For RGB333 values `R`, `G`, and `B`:
+The prompt library may use a 16:9 composition phrase as a descriptive art direction, but the master canvas remains 320×224 unless an explicitly documented alternate target is requested.
 
-```text
-CRAM = (B << 9) | (G << 5) | (R << 1)
-```
+## 6. Export
 
-The CRAM column in `color-ramp.md` uses this layout. It is not a three-digit shorthand.
+- Preserve the logical dimensions in the PNG master.
+- Use integer nearest-neighbor scaling for display enlargements.
+- Apply `image-rendering: pixelated` in CSS to all raster imagery.
+- Do not smooth or resample after enlargement.
+- Keep any source format that preserves editable tile or palette data.
+- Test silhouette, contrast, and readability at 320×224 before approving enlargement.
 
-## 3. Tiles and pixels
+## 7. Reference source
 
-- Base character/tile unit: 8×8 pixels.
-- Pixel depth: 4 bits per pixel (4bpp).
-- Each tile uses one selected 16-entry palette line.
-- Tile art should use hard-edged clusters and intentional dithering.
-- No anti-aliasing, subpixel placement, blur, or smooth gradients.
-- Sprites are assembled from multiple 8×8 character cells; their overall dimensions are not restricted to a single tile.
-- The tile atlas in this repository is a design vocabulary, not a promise that all 96 tiles can be resident simultaneously in VRAM with no memory planning.
-
-## 4. Native display modes versus Codex artwork
-
-Common Mega Drive display configurations include:
-- 320×224 pixels (40×28 8×8 cells), used by common NTSC 40-cell mode.
-- 320×240 pixels (40×30 8×8 cells), available in PAL configurations.
-- 256-pixel-wide alternatives also exist.
-
-**320×180 is the Codex's custom 16:9 artwork viewport. It is not a standard native Genesis display mode.**
-
-This distinction is deliberate. The artwork must fit the website's wide composition while remaining built with Genesis-like tile discipline and RGB333 color limits. A later game implementation must choose the actual output mode and recompose or letterbox the art as necessary.
-
-## 5. Tile-aligned staging for 320×180 art
-
-180 is not divisible by 8. For an asset that must be composed on a whole-tile vertical grid:
-
-1. Construct at 320×184 (40×23 tiles).
-2. Reserve the lowest four rows of pixels as crop allowance or compose them so they can be safely removed.
-3. Crop the bottom four pixels to produce the final 320×180 web asset.
-4. Record the crop in the asset manifest.
-
-This is a web-art workflow, not a Genesis video mode. For actual console gameplay, compose against the selected native framebuffer dimensions.
-
-## 6. Scaling and export
-
-- Preserve the logical pixel dimensions in the master file.
-- Upscale only by integer factors whenever possible.
-- Use nearest-neighbor scaling.
-- Set CSS `image-rendering: pixelated` for raster assets.
-- Do not resample after nearest-neighbor enlargement.
-- Preserve palette index metadata in source files where the toolchain supports it.
-- Export a clean PNG master and a web-optimized copy.
-- Keep a readable source/editable file when practical.
-
-## 7. Dithering and shading
-
-Preferred techniques:
-- Two-tone checkerboard dithering for low-frequency transitions.
-- Larger woodcut-block clusters for stone, foliage, storm clouds, and worn surfaces.
-- Hard-edged shadow masses.
-- Palette changes to establish distance instead of blur.
-- Highlights placed on material edges and focal points.
-
-Avoid uniform noise. Dither is structure, not digital grain.
-
-## 8. Reference sources
-
-These sources establish the hardware facts above:
-
-- [Sega Genesis Reference Sheets (1992)](https://segaretro.org/images/c/cf/SegaGenesisReferenceSheets_1992-11-05.pdf) — includes 8×8 character cells and the CRAM word layout `0000BBBOGGGORRRO`.
-- [Genesis Technical Overview](https://wiki.megacatstudios.com/wp-content/uploads/2020/04/sega2f.pdf) — display dimensions, character generator, and color capabilities.
-- [Genesis display and palette summary](https://segaretro.org/Sega_Mega_Drive/Technical_specifications) — useful secondary reference.
-
-When a future game engine or devkit exposes different asset-import constraints, follow the engine's authoritative documentation for the build pipeline while preserving the Codex's visual intent.
+This is the project's locked production brief. For hardware implementation, verify the target engine's specific asset import and memory constraints against the relevant Genesis/Mega Drive SDK documentation. Do not confuse the Codex's art specification with a claim that every planned tile or asset is loaded simultaneously into VRAM.
