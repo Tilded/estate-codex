@@ -26,6 +26,7 @@
 }
 
 * { box-sizing: border-box; border-radius: 0 !important; }
+img, svg { image-rendering: pixelated; }
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
 body {
   margin: 0;
