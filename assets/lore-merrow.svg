@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="224" viewBox="0 0 320 224" shape-rendering="crispEdges" role="img" aria-labelledby="t d">
+  <!-- PLACEHOLDER LORE SCENE: replace with generated 320x224 art. Keep the broken-chain emblem visually double-edged: liberation in its public display, administrative enclosure in its geometry. -->
+  <title id="t">The Auditor's chamber</title><desc id="d">A severe stone administrative chamber, ledger table, and broken-chain emblem enclosed by rigid iron-grey geometry.</desc>
+  <rect width="320" height="224" fill="#242424"/>
+  <rect x="0" y="0" width="320" height="37" fill="#24246D"/>
+  <rect x="20" y="29" width="280" height="129" fill="#49496D"/>
+  <rect x="35" y="39" width="250" height="5" fill="#6D6D92"/>
+  <rect x="48" y="47" width="7" height="107" fill="#DBB692"/>
+  <rect x="265" y="47" width="7" height="107" fill="#DBB692"/>
+  <rect x="72" y="54" width="176" height="84" fill="#242424"/>
+  <rect x="81" y="62" width="158" height="68" fill="#24246D"/>
+  <rect x="112" y="75" width="96" height="3" fill="#6D6D92"/>
+  <rect x="112" y="87" width="96" height="3" fill="#6D6D92"/>
+  <rect x="112" y="99" width="96" height="3" fill="#6D6D92"/>
+  <rect x="112" y="111" width="72" height="3" fill="#6D6D92"/>
+  <rect x="143" y="66" width="34" height="6" fill="#DBB624"/>
+  <rect x="149" y="57" width="22" height="5" fill="#DBB624"/>
+  <rect x="156" y="48" width="8" height="9" fill="#DBB624"/>
+  <path d="M135 77h12v5h-12z M173 77h12v5h-12z M147 87h12v5h-12z M161 87h12v5h-12z M180 87h12v5h-12z" fill="#6D6D92"/>
+  <rect x="0" y="158" width="320" height="66" fill="#242424"/>
+  <rect x="48" y="170" width="224" height="12" fill="#6D6D92"/>
+  <rect x="59" y="182" width="202" height="24" fill="#B66D24"/>
+  <rect x="76" y="187" width="72" height="3" fill="#FFDBB6"/>
+  <rect x="76" y="195" width="72" height="3" fill="#FFDBB6"/>
+  <rect x="174" y="187" width="62" height="3" fill="#FFDBB6"/>
+  <rect x="174" y="195" width="62" height="3" fill="#FFDBB6"/>
+  <rect x="0" y="212" width="320" height="12" fill="#242424"/>
+</svg>
